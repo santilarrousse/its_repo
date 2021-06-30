@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-info">
+    <div class="container-fluid">
+        <a  class="navbar-brand" href="#">Pagos de Hoy</a>
+    </div>  
+</nav>
+    <div id="app" class="container-fluid mt-3">
+       <div class="row">
+           <div class="col-lg-4">
+             <div class="card border-info mb-3" >
+                <div class="card-header">Cargo de Pagos</div>
+                 <div class="row">
+                     <div class="col-lg-5">              
+                        <div class="m-2">
+                        <label class="form-label mt-2" for="">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Ingrese nombre" v-model="nombre">
+                        </div>
+                        <div class="m-2">
+                        <label class="form-label" for="">DNI</label>
+                        <input type="number" class="form-control" placeholder="Ingrese DNI" v-model="dni">
+                        </div>
+                        <div class="m-2">
+                        <label class="form-label" for="">Cuota</label>
+                        <input type="number" class="form-control" placeholder="Ingrese N° de Cuota" v-model="cuota">
+                        </div>
+                        <div class="m-1">
+                        <label class="form-label">Fecha de Pago</label>
+                        <input type="number" class="form-control" v-model="fecha_pago" placeholder="Ingrese Fecha">
+                        </div>
+
+                       
+
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="m-2">
+                        <label class="form-label mt-2">Apellido</label>
+                        <input type="text" class="form-control" v-model="apellido" placeholder="Ingrese Apellido">
+                        </div>
+                        <div class="m-2">
+                        <label class="form-label">Correo</label>
+                        <input type="email" class="form-control" v-model="correo" placeholder="Ingrese Correo">
+                        </div>
+                        <div class="m-2">
+                        <label class="form-label">Importe</label>
+                        <input type="email" class="form-control" v-model="importe" placeholder="Ingrese Importe">
+                        </div>
+                     </div>    
+                     <div class="mt-3 p-4"> 
+                        <button @click="GuardarTarea" class="btn btn-success float-start" >Guardar Pago</button>
+                        <button @click="eliminarTarea()" class="btn btn-danger float-end">Borrar Pago</button>
+                        </div>           
+                 </div>               
+             </div>
+         </div>
+
+        
+            <div class="col-lg-8">
+         <div class="card border-info mb-3" >           
+            <div class="card-header">Grilla Pagos</div>
+            <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr class="table-primary">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">DNI</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Cuota</th>
+                        <th scope="col">Importe</th>
+                        <th scope="col">Fecha</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr v-for="(element,index) of lista_tareas">
+                        <td>{{element.nombre}}</td>
+                        <td>{{element.apellido}}</td>
+                        <td>{{element.dni}}</td>
+                        <td>{{element.correo}}</td>
+                        <td>{{element.cuota}}</td>
+                        <td>{{element.importe}}</td>
+                        <td>{{element.fecha_pago}}</td>
+                        <td><button></button></td>
+
+
+
+
+
+                    </tr>
+
+                    </tbody>   
+
+
+            </table>
+            </div>
+         </div>
+            </div>
+    </div>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
