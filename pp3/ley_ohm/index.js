@@ -5,8 +5,10 @@ const calcular_resistencia = () => {
 
     document.querySelector("#resultado").value = rr;   
 }
+
 const btn_resistencia = document.querySelector("#bt_resistencia");
 btn_resistencia.addEventListener("click",calcular_resistencia)
+
 
 
 const calcular_intensidad = () => {
