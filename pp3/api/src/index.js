@@ -8,7 +8,7 @@ server.use(express.json())
 server.use(cors())
 server.use(morgan('dev'))
 
-server.set('port', process.env.PORT || 3000)
+server.set('port', process.env.PORT || 3006)
 
 server.use(require('./routes/cliente.route')) 
 
